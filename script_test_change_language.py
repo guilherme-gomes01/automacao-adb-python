@@ -1,7 +1,5 @@
-
 import subprocess
 #import xml.etree.ElementTree as ET
-
 import time
 import script_test_search as teste1
 
