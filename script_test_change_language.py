@@ -5,6 +5,7 @@ import script_test_events as events
 import script_test_screen_functions as screen
 import script_test_object_functions as obj
 
+#pegar o dispositivo e gravar a tela
 device = dev.get_devices()
 screen.record_screen()
 
