@@ -4,7 +4,7 @@ import time
 
 def record_screen():
     print("RECORDING THE SCREEN")
-    subprocess.Popen("adb shell screenrecord --time-limit 7 /sdcard/DCIM/screen_rotation.mp4", shell=True, stdout=subprocess.PIPE)
+    subprocess.Popen("adb shell screenrecord --time-limit 20 /sdcard/DCIM/screen_rotation.mp4", shell=True, stdout=subprocess.PIPE)
     time.sleep(3)
 
 def get_devices():
