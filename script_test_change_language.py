@@ -25,14 +25,14 @@ time.sleep(2)
 dev.get_screen(device)
 obj.get_objects('Idiomas e entrada')
 
-#pegar tela e alterar idioma
-time.sleep(2)
+#pegar tela e abrir Idiomas
+time.sleep(3)
 dev.get_screen(device)
 obj.get_objects('Idiomas')
 
-time.sleep(2)
+time.sleep(3)
 dev.get_screen(device)
 
-output = subprocess.Popen("adb shell input swipe 926 242 926 500 500", shell=True, stdout=subprocess.PIPE)
+output = subprocess.Popen("adb shell input swipe 926 242 926 440 500", shell=True, stdout=subprocess.PIPE)
 time.sleep(2)
-output = subprocess.Popen("adb shell input swipe 926 242 926 500 500", shell=True, stdout=subprocess.PIPE)
+output = subprocess.Popen("adb shell input swipe 926 242 926 440 500", shell=True, stdout=subprocess.PIPE)
