@@ -1,14 +1,10 @@
 import subprocess
 import time
-import script_test_device_functions as dev
-import script_test_events as events
-import script_test_screen_functions as screen
-import script_test_object_functions as obj
+import script_device_functions as dev
+import script_events as events
+import script_screen_functions as screen
+import script_object_functions as obj
 
-def get_record(serial):
-    time.sleep(3)
-    print("PASSANDO ARQUIVO GRAVADO PARA COMPUTADOR")
-    output = subprocess.Popen('adb -s %s pull /sdcard/DCIM/date_and_hour.mp4'%serial, shell=True, stdout=subprocess.PIPE)
 
 #pegar o dispositivo e gravar a tela
 device = dev.get_devices()
@@ -20,48 +16,53 @@ dev.get_screen(device)
 obj.get_objects('Configurar')
 
 #pegar tela e abrir sistema
-time.sleep(2)
+time.sleep(3)
 events.swipe_screen()
 dev.get_screen(device)
 obj.get_objects('Sistema')
 
 #pegar tela e abrir Data e Hora
-time.sleep(2)
+time.sleep(3)
 dev.get_screen(device)
 obj.get_objects('Data e hora')
 
 #pegar tela e desabilitar data e hora automaticas
-time.sleep(2)
+time.sleep(3)
 dev.get_screen(device)
+obj.get_objects1('Data e hora automáticas')
+
+'''
 obj.get_objects('Data e hora automáticas')
 
 #pegar tela e definir data
-time.sleep(2)
+time.sleep(3)
 dev.get_screen(device)
 obj.get_objects('Definir data')
 
 #pegar tela e definir data
-time.sleep(2)
+time.sleep(3)
 dev.get_screen(device)
-obj.get_objects('14')
-time.sleep(2)
+obj.get_objects("14")
+time.sleep(3)
+
 obj.get_objects('OK')
 
 #pegar tela e definir hora
-time.sleep(2)
+time.sleep(3)
 dev.get_screen(device)
 obj.get_objects('Definir hora')
 
 #pegar tela e definir hora
-time.sleep(2)
+time.sleep(3)
 dev.get_screen(device)
 obj.get_objects('3')
-time.sleep(2)
+time.sleep(3)
 obj.get_objects('55')
-time.sleep(2)
+time.sleep(3)
 obj.get_objects('OK')
 
-get_record(device)
+screen.get_record(device)
+'''
 
 '''
 output = subprocess.Popen("adb shell input swipe 926 242 926 500 500", shell=True, stdout=subprocess.PIPE)

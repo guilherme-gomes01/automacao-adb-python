@@ -1,9 +1,9 @@
 import subprocess
 import time
-import script_test_device_functions as dev
-import script_test_events as events
-import script_test_screen_functions as screen
-import script_test_object_functions as obj
+import script_device_functions as dev
+import script_events as events
+import script_screen_functions as screen
+import script_object_functions as obj
 
 #pegar o dispositivo e gravar a tela
 device = dev.get_devices()
