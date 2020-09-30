@@ -5,34 +5,39 @@ import script_events as events
 import script_screen_functions as screen
 import script_object_functions as obj
 
-#pegar o dispositivo e gravar a tela
-device = dev.get_devices()
-screen.record_screen()
+time_limit = '30'
+name_file = 'change_language_example.mp4'
 
-#pegar tela e abrir configurações
-events.swipe_screen()
-dev.get_screen(device)
-obj.get_objects('Configurar')
+def change_language():
+    #pegar o dispositivo e gravar a tela
+    device = dev.get_devices()
+    screen.record_screen(time_limit, name_file)
 
-#pegar tela e abrir sistema
-time.sleep(2)
-events.swipe_screen()
-dev.get_screen(device)
-obj.get_objects('Sistema')
+    #pegar tela e abrir configurações
+    events.swipe_screen()
+    dev.get_screen(device)
+    obj.get_objects('Configurar')
 
-#pegar tela e abrir idiomas e entrada
-time.sleep(2)
-dev.get_screen(device)
-obj.get_objects('Idiomas e entrada')
+    #pegar tela e abrir sistema
+    time.sleep(2)
+    events.swipe_screen()
+    dev.get_screen(device)
+    obj.get_objects('Sistema')
 
-#pegar tela e abrir Idiomas
-time.sleep(3)
-dev.get_screen(device)
-obj.get_objects('Idiomas')
+    #pegar tela e abrir idiomas e entrada
+    time.sleep(2)
+    dev.get_screen(device)
+    obj.get_objects('Idiomas e entrada')
 
-time.sleep(3)
-dev.get_screen(device)
+    #pegar tela e abrir Idiomas
+    time.sleep(3)
+    dev.get_screen(device)
+    obj.get_objects('Idiomas')
 
-output = subprocess.Popen("adb shell input swipe 926 242 926 440 500", shell=True, stdout=subprocess.PIPE)
-time.sleep(2)
-output = subprocess.Popen("adb shell input swipe 926 242 926 440 500", shell=True, stdout=subprocess.PIPE)
+    time.sleep(3)
+    dev.get_screen(device)
+
+    output = subprocess.Popen("adb shell input swipe 926 242 926 440 500", shell=True, stdout=subprocess.PIPE)
+    time.sleep(2)
+    output = subprocess.Popen("adb shell input swipe 926 242 926 440 500", shell=True, stdout=subprocess.PIPE)
+    events.event_home()

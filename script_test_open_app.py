@@ -27,3 +27,4 @@ def openApp(name_app):
     obj.get_objects(name_app)
     time.sleep(5)
     events.event_home()
+    screen.get_record(device)
