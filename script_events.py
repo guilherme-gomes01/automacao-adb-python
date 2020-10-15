@@ -23,3 +23,8 @@ def reboot():
     print("\nReiniciando o aparelho")
     output = subprocess.Popen("adb reboot", shell=True, stdout=subprocess.PIPE)
     time.sleep(15)
+
+def event_open_apps():
+    print("\nApps abertos")
+    output = subprocess.Popen("adb shell input keyevent KEYCODE_APP_SWITCH", shell=True, stdout=subprocess.PIPE)
+    time.sleep(3)

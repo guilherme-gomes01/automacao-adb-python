@@ -2,7 +2,6 @@ import subprocess
 import xml.etree.ElementTree as ET
 import time
 
- 
 # Creates file
 def create_dir():
     # Command below might not work if you don't have root permissions 
@@ -12,7 +11,6 @@ def create_dir():
     print("CREATING FILE INSIDE ./test_directory")
     subprocess.Popen('adb shell touch /test_directory/example.txt', shell=True, stdout=subprocess.PIPE)
     time.sleep(5)
-
 
 # Creates a copy of example.txt 
 def create_copy():
@@ -40,8 +38,10 @@ def remove_dir_and_file():
     subprocess.Popen('adb shell rm -r /sdcard/new_directory', shell=True, stdout=subprocess.PIPE)
 
 
-create_dir()
-create_copy()
-rename_dir()
-move_dir()
-remove_dir_and_file()
+''' Main function'''
+def transfer_files():
+    create_dir()
+    create_copy()
+    rename_dir()
+    move_dir()
+    remove_dir_and_file()

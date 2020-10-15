@@ -1,11 +1,9 @@
 '''
-    Algoritmo script_test_open_app_v1.py
+    Algoritmo script_test_open_app.py
     Autores: Diego Torres, Giovanna S. Teodoro e João Guilherme S. Gomes
     Descrição: O algoritmo automatiza uma série de comandos adb (android debug bridge) que realizam em um device (os testes foram
-               realizados em um emulador android pixel 3 com Android 9) a operação de abertura de um determinado app (no caso a
-               Play Store).
-    OBS: a numeração no início de cada descrição de função representa a ordem de execução das funções. A descrição completa do
-         código encontra-se em bit.ly/hefesto7-doc
+               realizados em um emulador android pixel 3 com Android 9) a operação de abertura de um determinado app.
+    OBS: A descrição completa do código encontra-se em bit.ly/hefesto7-doc
 '''
 
 import subprocess

@@ -1,3 +1,12 @@
+'''
+    Algoritmo script_test_search.py
+    Autores: Diego Torres, Giovanna S. Teodoro e João Guilherme S. Gomes
+    Descrição: O algoritmo automatiza uma série de comandos adb (android debug bridge) que realizam em um device (os testes foram
+               realizados em um emulador android pixel 3 com Android 9) a operação de pesquisa no Chrome.
+
+    OBS: A descrição completa do código encontra-se em bit.ly/hefesto7-doc
+'''
+
 import subprocess
 import time
 import script_device_functions as dev
@@ -23,9 +32,10 @@ def search(search_text):
     events.swipe_screen()
 
 
-def pesquisa(text_search):
+def test_search(text_search):
     screen.record_screen(time_limit, name_file)
     dev.get_screen(device)
+    #events.swipe_screen()
     obj.get_objects('Chrome')
     search(text_search)
     events.event_back()

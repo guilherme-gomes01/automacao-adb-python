@@ -1,3 +1,12 @@
+'''
+    Algoritmo script_test_change_date.py
+    Autores: Diego Torres, Giovanna S. Teodoro e João Guilherme S. Gomes
+    Descrição: O algoritmo automatiza uma série de comandos adb (android debug bridge) que realizam em um device (os testes foram
+               realizados em um emulador android pixel 3 com Android 9) a operação de alterar data.
+
+    OBS: A descrição completa do código encontra-se em bit.ly/hefesto7-doc
+'''
+
 import subprocess
 import time
 import script_device_functions as dev

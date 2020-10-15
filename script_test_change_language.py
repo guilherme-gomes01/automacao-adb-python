@@ -1,3 +1,12 @@
+'''
+    Algoritmo script_test_change_language.py
+    Autores: Diego Torres, Giovanna S. Teodoro e João Guilherme S. Gomes
+    Descrição: O algoritmo automatiza uma série de comandos adb (android debug bridge) que realizam em um device (os testes foram
+               realizados em um emulador android pixel 3 com Android 9) a operação de alteração de linguagem do dispositivo.
+
+    OBS: A descrição completa do código encontra-se em bit.ly/hefesto7-doc
+'''
+
 import subprocess
 import time
 import script_device_functions as dev
@@ -19,13 +28,13 @@ def change_language():
     obj.get_objects('Configurar')
 
     #pegar tela e abrir sistema
-    time.sleep(2)
+    time.sleep(3)
     events.swipe_screen()
     dev.get_screen(device)
     obj.get_objects('Sistema')
 
     #pegar tela e abrir idiomas e entrada
-    time.sleep(2)
+    time.sleep(3)
     dev.get_screen(device)
     obj.get_objects('Idiomas e entrada')
 
@@ -35,9 +44,10 @@ def change_language():
     obj.get_objects('Idiomas')
 
     time.sleep(3)
-    dev.get_screen(device)
+    #dev.get_screen(device)
 
-    output = subprocess.Popen("adb shell input swipe 926 242 926 440 500", shell=True, stdout=subprocess.PIPE)
-    time.sleep(2)
-    output = subprocess.Popen("adb shell input swipe 926 242 926 440 500", shell=True, stdout=subprocess.PIPE)
+    output = subprocess.Popen("adb shell input swipe 926 242 926 500 500", shell=True, stdout=subprocess.PIPE)
+    time.sleep(3)
+    output1 = subprocess.Popen("adb shell input swipe 926 242 926 500 500", shell=True, stdout=subprocess.PIPE)
+    time.sleep(3)
     events.event_home()
