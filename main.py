@@ -1,3 +1,11 @@
+'''
+    Algoritmo main.py
+    Autores: Diego Torres, Giovanna S. Teodoro e João Guilherme S. Gomes
+    Descrição: O algoritmo agrega todas as funções criadas para automatizar comandos adb, com interface para escolha
+               das funcionalidades.
+    OBS: A descrição completa do código encontra-se em bit.ly/hefesto7-doc
+'''
+
 import os
 import time
 import script_test_open_app as openApp
