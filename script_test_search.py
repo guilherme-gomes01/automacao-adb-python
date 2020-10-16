@@ -40,6 +40,7 @@ def test_search(text_search):
     search(text_search)
     events.event_back()
     events.event_home()
+    screen.get_record(device, name_file)
 
 '''
 def open_app():

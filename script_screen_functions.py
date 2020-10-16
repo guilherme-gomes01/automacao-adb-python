@@ -14,8 +14,7 @@ def print_screen():
     print("Tirando print da tela")
     output = subprocess.Popen("adb shell screencap -p /sdcard/DCIM/screenshot.png", shell=True, stdout=subprocess.PIPE)
 
-def get_record(serial):
-    time.sleep(3)
-    print("PASSANDO ARQUIVO GRAVADO PARA COMPUTADOR")
-    output = subprocess.Popen('adb -s %s pull /sdcard/DCIM/date_and_hour.mp4'%serial, shell=True, stdout=subprocess.PIPE)
-
+def get_record(serial, name):
+    time.sleep(5)
+    print("PULLING .mp4")
+    output = subprocess.Popen('adb -s %s pull /sdcard/DCIM/%s'%(serial, name), shell=True, stdout=subprocess.PIPE)

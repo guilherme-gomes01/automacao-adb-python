@@ -7,8 +7,8 @@ import script_test_transfer_files as tFiles
 import script_test_change_date as mudaData
 import script_test_change_hour as mudaHora
 import script_test_install_uninstall as IU
-#import script_test_inverting_colors as colors
-#import script_test_screen_rotation as sRotation
+import script_test_inverting_colors as colors
+import script_test_screen_rotation as sRotation
 
 
 def menu(opcao):
@@ -55,26 +55,35 @@ def menu(opcao):
     elif opcao == 8:
         os.system('cls')  # For Windows
         os.system('clear')  # For Linux/OS X
+        colors.inverting_colors()
 
-        #inverting colors
-        print("inverting colors")
     elif opcao == 9:
         os.system('cls')  # For Windows
         os.system('clear')  # For Linux/OS X
+        sRotation.rotation()
 
-        #screen rotation
-        print("screen rotation")
     else:
         print("Opção inválida")
 
 
 def main():
-    print("-----------------------------------------------------"
-          "\nEscolha a opção:\n\t1 - Open app\n\t2 - Search\n\t3 - Change language\n\t4 - Transfer files"
-          "\n\t5 - Change date\n\t6 - Change hour\n\t7 - Install and Uninstall\n\t8 - Inverting colors\n\t9 - Screen rotation"
-          "\n-----------------------------------------------------")
-    op = int(input("Digite a opção: "))
+    resposta = 's'
 
-    menu(op)
+    while resposta == 's':
+        print("-----------------------------------------------------"
+              "\nEscolha a opção:\n\t1 - Open app\n\t2 - Search\n\t3 - Change language\n\t4 - Transfer files"
+              "\n\t5 - Change date\n\t6 - Change hour\n\t7 - Install and Uninstall\n\t8 - Inverting colors\n\t9 - Screen rotation"
+              "\n-----------------------------------------------------")
+        op = int(input("Digite a opção: "))
+        menu(op)
 
+        os.system('cls')  # For Windows
+        os.system('clear')  # For Linux/OS X
+
+        resposta = input("\nDeseja continuar (s/n)? ")
+        if resposta == 'n':
+            break
+
+#------ EXECUÇÃO DO MENU ------
 main()
+

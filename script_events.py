@@ -2,7 +2,7 @@ import subprocess
 import time
 
 def event_home():
-    print("\nVoltando a tela inicial")
+    print("\nCHANGING TO HOME")
     output = subprocess.Popen("adb shell input keyevent 3", shell=True, stdout=subprocess.PIPE)
     time.sleep(2)
 
